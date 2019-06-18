@@ -7,16 +7,16 @@ import javax.sql.DataSource;
 
 import com.mchange.v2.c3p0.DataSources;
 
+
 public class DBConnect {
 	
-	private static String jdbcURL = "jdbc:mysql://localhost/artsmia?user=root" ;
+	private static String jdbcURL = "jdbc:mysql://localhost/artsmia?useTimezone=true&serverTimezone=UTC&user=root&password=Federi22!" ;
 	
 	private static DataSource ds ;
 	
 	public static Connection getConnection() {
 		
 		if(ds==null) {
-			// initialize DataSource
 			try {
 				ds = DataSources.pooledDataSource(DataSources.unpooledDataSource(jdbcURL)) ;
 			} catch (SQLException e) {
